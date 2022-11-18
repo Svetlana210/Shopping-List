@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "uuid.v4": "^1.0.0"
+  }
+}
