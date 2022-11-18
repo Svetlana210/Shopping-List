@@ -7,6 +7,7 @@ body {
   .container {
     border-radius: 5px;
     width: 450px;
+    min-height: 790px;
     padding-bottom: 30px;
     padding-left: 15px;
     padding-right: 15px;
@@ -16,7 +17,16 @@ body {
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.6);
   }
 }
-
+.img-div {
+  margin: auto;
+  width: 1000px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/food-sm.png);
+}
 .section {
   padding-right: 0;
   padding-left: 0;
@@ -48,7 +58,7 @@ body {
   position: relative;
   /* border: 2px solid #497081; */
   font-size: 20px;
-  font-family: 'Zilla Slab';
+  font-family: "Zilla Slab";
   font-weight: 600;
   letter-spacing: 1px;
   color: #3c6678;
@@ -57,6 +67,9 @@ body {
   justify-content: space-between;
   /* cursor: pointer; */
   background-color: #fffafa;
+}
+.item:nth-child(2n) {
+  background-color: #f2eaf7;
 }
 
 .modal {
@@ -83,7 +96,7 @@ label {
   align-items: center;
 }
 .input-first {
-  font-family: 'Zilla Slab';
+  font-family: "Zilla Slab";
   font-weight: 600;
   letter-spacing: 1px;
   margin-top: 15px;
@@ -157,7 +170,7 @@ label {
 
 .label-checkbox::before {
   position: absolute;
-  content: '';
+  content: "";
   display: block;
   width: 20px;
   height: 20px;
@@ -192,7 +205,7 @@ label {
 .button-delete,
 .button-view {
   border: none;
-  background-color: #fffafa;
+  background-color: transparent;
 }
 .icon-delete,
 .icon-view {
