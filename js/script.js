@@ -99,8 +99,8 @@ const handleSubmit = (event) => {
   const { value } = event.target.elements.text;
 
   if (value === "") {
-    return alert("Please fill in all the fields!");
-  } else if (value.length >= 17) {
+    return alert("Please fill in the field!");
+  } else if (value.length >= 11) {
     return alert("Too long:(");
   }
   const payload = {
