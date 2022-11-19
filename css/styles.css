@@ -5,6 +5,9 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 5px;
   width: 300px;
   min-height: 390px;
@@ -242,19 +245,19 @@ label {
 
 @media screen and (min-width: 480px) {
   .submit-button {
-    left: 242px;
+    left: 210px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .submit-button {
-    left: 285px;
+    left: 260px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .submit-button {
-    left: 332px;
+    left: 278px;
   }
 }
 
@@ -356,4 +359,9 @@ label {
 .btn-close:hover,
 .btn-close:focus {
   fill: #335260;
+}
+
+.delete-btn {
+  border: none;
+  cursor: pointer;
 }

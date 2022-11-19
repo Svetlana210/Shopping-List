@@ -1,20 +1,20 @@
-toastr.options = {
-  closeButton: true,
-  debug: false,
-  newestOnTop: false,
-  progressBar: true,
-  positionClass: "toast-top-right",
-  preventDuplicates: false,
-  onclick: null,
-  showDuration: "300",
-  hideDuration: "1000",
-  timeOut: "5000",
-  extendedTimeOut: "1000",
-  showEasing: "swing",
-  hideEasing: "linear",
-  showMethod: "fadeIn",
-  hideMethod: "fadeOut",
-};
+// toastr.options = {
+//   closeButton: true,
+//   debug: false,
+//   newestOnTop: false,
+//   progressBar: true,
+//   positionClass: "toast-top-right",
+//   preventDuplicates: false,
+//   onclick: null,
+//   showDuration: "300",
+//   hideDuration: "1000",
+//   timeOut: "5000",
+//   extendedTimeOut: "1000",
+//   showEasing: "swing",
+//   hideEasing: "linear",
+//   showMethod: "fadeIn",
+//   hideMethod: "fadeOut",
+// };
 
 // массив данных (модель данных)
 let items = [];
@@ -55,6 +55,7 @@ const refs = {
   form: document.querySelector(".form"),
   modalText: modal.element().querySelector(".modal-text"),
   modalBtn: modal.element().querySelector(".btn-close"),
+  deleteBtn: document.querySelector(".delete-btn"),
 };
 // создаем на каждой итерации генерируемый шаблон и добавляем в дом
 const render = () => {
@@ -175,8 +176,11 @@ const loadData = () => {
 };
 loadData();
 render();
-
+const deleteAll = () => {
+  console.log("Delete");
+};
 // при нажатии на кнопку в форме, добавляем элемент
 refs.form.addEventListener("submit", handleSubmit);
 refs.list.addEventListener("click", handleListClick);
 refs.modalBtn.addEventListener("click", modal.close);
+refs.deleteBtn.addEventListener("click", deleteAll);
