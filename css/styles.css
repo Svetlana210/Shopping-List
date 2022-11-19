@@ -316,6 +316,9 @@ label {
   border: 1px solid rgb(139, 45, 186);
   box-shadow: inset 0px 0px 3px 1px rgb(137, 45, 183);
 }
+/* .input-checkbox:checked + input {
+  color: #678c9c;
+} */
 
 .button-delete,
 .button-view {
@@ -360,8 +363,62 @@ label {
 .btn-close:focus {
   fill: #335260;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 .delete-btn {
-  border: none;
+  position: relative;
+  /* margin: auto; */
+  padding: 19px 22px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  color: #111;
+  font-family: "Zilla Slab";
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.delete-btn::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  display: block;
+  border-radius: 28px;
+  background: rgba(100, 58, 122, 0.5);
+  width: 46px;
+  height: 46px;
+  transition: all 0.3s ease;
+}
+.text-del {
+  position: relative;
+}
+.icon-del {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #111;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+.delete-btn:hover::before {
+  width: 100%;
+  background: rgba(100, 58, 122, 0.8);
+  color: #f6f2fc;
+}
+
+.delete-btn:hover::before .icon-del:hover .ic {
+  transform: translateX(0);
+}
+.icon-del:hover:active {
+  transform: scale(0.96);
 }
