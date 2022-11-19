@@ -34,7 +34,7 @@ const getItemTemplate = ({
          <svg class="icon-view" width="23" height="23" data-action="view">
          <use href="./images/icons.svg#eye"></use></svg></button>
          <button data-action="delete" type="button" class="button-delete"><svg class="icon-delete" 
-         data-action="delete" width="21" height="21">
+          data-action="delete" width="21" height="21">
          <use href="./images/icons.svg#cancel"></use></svg></button>
         </div>
       </li>`;
@@ -42,9 +42,11 @@ const getItemTemplate = ({
 // генерируем модалку
 const modal = basicLightbox.create(`
     <div class="modal">
-        <p class="modal-text">
+        <p class="modal-text"> Do not forget!
         </p>
-        <button> Close </button>
+        <button class="btn-modal"> <svg class="btn-close" 
+         data-action="close" width="25" height="25">
+         <use href="./images/icons.svg#cancel"></use></svg> </button>
     </div>
 `);
 // ссылки на селектора
@@ -52,7 +54,7 @@ const refs = {
   list: document.querySelector(".list"),
   form: document.querySelector(".form"),
   modalText: modal.element().querySelector(".modal-text"),
-  modalBtn: modal.element().querySelector("button"),
+  modalBtn: modal.element().querySelector(".btn-close"),
 };
 // создаем на каждой итерации генерируемый шаблон и добавляем в дом
 const render = () => {
@@ -125,7 +127,7 @@ const checkItem = (id) => {
 
 const viewItem = (id) => {
   const { created } = items.find((item) => item.id === id);
-  refs.modalText.textContent = created;
+  // refs.modalText.textContent = created;
   modal.show();
 };
 

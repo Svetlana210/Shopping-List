@@ -3,34 +3,74 @@ body {
   background-color: #643a7a;
 }
 
-@media screen and (max-width: 1600px) {
+.container {
+  border-radius: 5px;
+  width: 300px;
+  min-height: 790px;
+  padding-bottom: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fffafa;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.6);
+}
+@media screen and (min-width: 480px) {
   .container {
-    border-radius: 5px;
-    width: 450px;
-    min-height: 790px;
-    padding-bottom: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #fffafa;
-    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.6);
+    width: 350px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 450px;
+  }
+}
+
 .img-div {
   margin: auto;
-  width: 1000px;
+  width: auto;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(../images/food-sm.png);
+    url(../images/food-small.png);
 }
-.section {
+
+@media screen and (min-width: 480px) {
+  .img-div {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .img-div {
+    width: 668px;
+    background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/food-sm.png);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .img-div {
+    width: 1000px;
+  }
+}
+/* .section {
   padding-right: 0;
   padding-left: 0;
-}
+} */
 /* @media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
@@ -51,13 +91,30 @@ body {
   padding: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
+  width: 260px;
   list-style: none;
+}
+@media screen and (min-width: 480px) {
+  .list {
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .list {
+    width: 400px;
+  }
 }
 .item {
   position: relative;
   /* border: 2px solid #497081; */
-  font-size: 20px;
+  font-size: 17px;
   font-family: "Zilla Slab";
   font-weight: 600;
   letter-spacing: 1px;
@@ -72,11 +129,12 @@ body {
   background-color: #f2eaf7;
 }
 
-.modal {
-  background-color: floralwhite;
-  padding: 50px;
-  border-radius: 5px;
+@media screen and (min-width: 768px) {
+  .item {
+    font-size: 20px;
+  }
 }
+
 label {
   display: flex;
   flex-direction: column;
@@ -88,6 +146,12 @@ label {
   font-family: Fredericka the Great;
   font-size: 50px;
   color: #643a7a;
+}
+
+@media screen and (max-width: 768px) {
+  .text-before {
+    font-size: 40px;
+  }
 }
 .div-input {
   position: relative;
@@ -107,11 +171,31 @@ label {
   background-color: #f6f2fc;
   /* border-radius: 5px; */
   padding: 13px;
-  font-size: 16px;
+  font-size: 14px;
   border-color: #f6f2fc;
-  width: 300px;
+  width: 200px;
   color: #497081;
 }
+
+@media screen and (min-width: 480px) {
+  .input-first {
+    width: 230px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input-first {
+    width: 260px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .input-first {
+    width: 300px;
+  }
+}
+
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #678c9c;
@@ -131,7 +215,7 @@ label {
 .submit-button {
   position: absolute;
   top: 19px;
-  left: 332px;
+  left: 209px;
   height: 36px;
   width: 50px;
   /* border-radius: 5px; */
@@ -146,6 +230,25 @@ label {
 .submit-button:focus {
   color: #335260;
 }
+
+@media screen and (min-width: 480px) {
+  .submit-button {
+    left: 248px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .submit-button {
+    left: 285px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .submit-button {
+    left: 332px;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -166,6 +269,7 @@ label {
   position: relative;
   flex-direction: row;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .label-checkbox::before {
@@ -206,6 +310,7 @@ label {
 .button-view {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 .icon-delete,
 .icon-view {
@@ -216,5 +321,33 @@ label {
 .icon-delete:focus,
 .icon-view:hover,
 .icon-view:focus {
+  fill: #335260;
+}
+.modal {
+  background-color: #fffafa;
+  padding: 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-text {
+  font-family: Fredericka the Great;
+  font-size: 25px;
+  color: #643a7a;
+}
+.btn-modal {
+  font-size: 14px;
+  align-content: center;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.btn-close {
+  fill: #678c9c;
+}
+
+.btn-close:hover,
+.btn-close:focus {
   fill: #335260;
 }
