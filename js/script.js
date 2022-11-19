@@ -85,6 +85,10 @@ const updateTodos = (payload) => {
 const deleteTodos = (payload) => {
   localStorage.setItem("todos", JSON.stringify(payload));
 };
+
+const deleteAllTodos = (payload) => {
+  localStorage.setItem("todos", JSON.stringify(payload));
+};
 // добавляем Элемент с текстом, который вводим в инпут и без галочки в массив данных
 
 const addItem = (item) => {
@@ -176,8 +180,12 @@ const loadData = () => {
 };
 loadData();
 render();
+
+// удаляеи все айтемі
 const deleteAll = () => {
-  console.log("Delete");
+  refs.list.innerHTML = "";
+  items = [];
+  deleteAllTodos(items);
 };
 // при нажатии на кнопку в форме, добавляем элемент
 refs.form.addEventListener("submit", handleSubmit);
