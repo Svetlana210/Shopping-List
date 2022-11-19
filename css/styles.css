@@ -1,17 +1,20 @@
 body {
   font-family: Roboto, sans-serif;
   background-color: #643a7a;
+  margin: 0;
 }
 
 .container {
   border-radius: 5px;
   width: 300px;
-  min-height: 790px;
+  min-height: 390px;
   padding-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #fffafa;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.6);
 }
@@ -24,6 +27,7 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     width: 400px;
+    min-height: 590px;
   }
 }
 
@@ -34,8 +38,12 @@ body {
 }
 
 .img-div {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   width: auto;
+  /* height: auto; */
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
@@ -215,7 +223,7 @@ label {
 .submit-button {
   position: absolute;
   top: 19px;
-  left: 209px;
+  left: 205px;
   height: 36px;
   width: 50px;
   /* border-radius: 5px; */
@@ -233,7 +241,7 @@ label {
 
 @media screen and (min-width: 480px) {
   .submit-button {
-    left: 248px;
+    left: 242px;
   }
 }
 
@@ -289,8 +297,7 @@ label {
   transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.label-checkbox:hover::before,
-.label-checkbox:focus::before {
+.label-checkbox:hover::before {
   border: 1px solid rgb(139, 45, 186);
   box-shadow: inset 0px 0px 3px 1px rgb(137, 45, 183);
 }
@@ -318,9 +325,7 @@ label {
 }
 
 .icon-delete:hover,
-.icon-delete:focus,
-.icon-view:hover,
-.icon-view:focus {
+.icon-view:hover {
   fill: #335260;
 }
 .modal {
