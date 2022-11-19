@@ -1,20 +1,20 @@
-// toastr.options = {
-//   closeButton: true,
-//   debug: false,
-//   newestOnTop: false,
-//   progressBar: true,
-//   positionClass: 'toast-top-right',
-//   preventDuplicates: false,
-//   onclick: null,
-//   showDuration: '300',
-//   hideDuration: '1000',
-//   timeOut: '5000',
-//   extendedTimeOut: '1000',
-//   showEasing: 'swing',
-//   hideEasing: 'linear',
-//   showMethod: 'fadeIn',
-//   hideMethod: 'fadeOut',
-// };
+toastr.options = {
+  closeButton: true,
+  debug: false,
+  newestOnTop: false,
+  progressBar: true,
+  positionClass: "toast-top-right",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "300",
+  hideDuration: "1000",
+  timeOut: "5000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};
 
 // массив данных (модель данных)
 let items = [];
@@ -42,7 +42,7 @@ const getItemTemplate = ({
 // генерируем модалку
 const modal = basicLightbox.create(`
     <div class="modal">
-        <p class="modal-text"> Do not forget!
+        <p class="modal-text"> Do not forget &#x1F609
         </p>
         <button class="btn-modal"> <svg class="btn-close" 
          data-action="close" width="25" height="25">
@@ -89,6 +89,7 @@ const deleteTodos = (payload) => {
 const addItem = (item) => {
   items.push(item);
 };
+
 // логика обработки при нажатии на сабмит: вэлью = это текст,
 // который вводим в инпут, сбрасываем перезагрузку страницы по умолчанию,
 // добавляем айтем и создаем заново разметку,с очищением, чтобы элементы
@@ -96,6 +97,12 @@ const addItem = (item) => {
 const handleSubmit = (event) => {
   //  console.log(event)
   const { value } = event.target.elements.text;
+
+  if (value === "") {
+    return alert("Please fill in all the fields!");
+  } else if (value.length >= 17) {
+    return alert("Too long:(");
+  }
   const payload = {
     id: uuid.v4(),
     text: value,
@@ -104,8 +111,11 @@ const handleSubmit = (event) => {
   };
 
   event.preventDefault();
+
   addItem(payload);
+
   createTodo(items);
+
   render();
 
   // toastr.success('Have fun storming the castle!', 'Miracle Max Says');
