@@ -103,7 +103,7 @@ const handleSubmit = (event) => {
   //  console.log(event)
   const { value } = event.target.elements.text;
 
-  if (value === "") {
+  if (value.trim() === "") {
     return alert("Please fill in the field!");
   } else if (value.length >= 11) {
     return alert("Too long:(");
