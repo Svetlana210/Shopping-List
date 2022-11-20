@@ -385,7 +385,7 @@ a {
   transition: all 0.2s ease;
   color: #111;
   font-family: "Zilla Slab";
-  font-size: 13px;
+  font-size: 10px;
   line-height: 18px;
   font-weight: 900;
   letter-spacing: 0.25em;
@@ -396,13 +396,13 @@ a {
 .delete-btn::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 8px;
   left: 0;
   display: block;
   border-radius: 28px;
   background: rgba(100, 58, 122, 0.5);
-  width: 46px;
-  height: 46px;
+  width: 36px;
+  height: 36px;
   transition: all 0.3s ease;
 }
 .text-del {
