@@ -339,11 +339,18 @@ label {
 .icon-delete,
 .icon-view {
   fill: #678c9c;
+  transform: scale(1);
+  transform: translateY(-10%) rotate(0deg);
+  transition: all 0.2s ease-out;
 }
 
-.icon-delete:hover,
+.icon-delete:hover {
+  fill: #335260;
+  transform: translateY(-10%) rotate(180deg);
+}
 .icon-view:hover {
   fill: #335260;
+  transform: scale(1.1);
 }
 .modal {
   background-color: #fffafa;
@@ -431,4 +438,11 @@ a {
 }
 .icon-del:hover:active {
   transform: scale(0.96);
+}
+.date {
+  margin: auto;
+  font-family: "Zilla Slab";
+  font-size: 20px;
+  padding: 10px;
+  color: #265b70;
 }

@@ -34,8 +34,8 @@ const getItemTemplate = ({
          <svg class="icon-view" width="23" height="23" data-action="view">
          <use href="./images/icons.svg#eye"></use></svg></button>
          <button data-action="delete" type="button" class="button-delete"><svg class="icon-delete" 
-          data-action="delete" width="21" height="21">
-         <use href="./images/icons.svg#cancel"></use></svg></button>
+          data-action="delete" type="button" width="21" height="21">
+         <use data-action="delete" type="button" href="./images/icons.svg#cancel"></use></svg></button>
         </div>
       </li>`;
 
@@ -192,3 +192,6 @@ refs.form.addEventListener("submit", handleSubmit);
 refs.list.addEventListener("click", handleListClick);
 refs.modalBtn.addEventListener("click", modal.close);
 refs.deleteBtn.addEventListener("click", deleteAll);
+
+var dt = new Date();
+document.getElementById("datetime").innerHTML = dt.toLocaleString();
