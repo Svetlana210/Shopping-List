@@ -145,11 +145,12 @@ const viewItem = (id) => {
   // refs.modalText.textContent = created;
   modal.show();
 };
-
 const deleteItem = (id) => {
-  items = items.filter((item) => item.id !== id);
-  deleteTodos(items);
-  render();
+  setTimeout(function timer() {
+    items = items.filter((item) => item.id !== id);
+    deleteTodos(items);
+    render();
+  }, 200);
 };
 
 const handleListClick = (e) => {
@@ -182,10 +183,17 @@ loadData();
 render();
 
 // удаляеи все айтемі
+// const deleteAll = () => {
+//   refs.list.innerHTML = "";
+//   items = [];
+//   deleteAllTodos(items);
+// };
 const deleteAll = () => {
-  refs.list.innerHTML = "";
-  items = [];
-  deleteAllTodos(items);
+  setTimeout(function timer() {
+    refs.list.innerHTML = "";
+    items = [];
+    deleteAllTodos(items);
+  }, 200);
 };
 // при нажатии на кнопку в форме, добавляем элемент
 refs.form.addEventListener("submit", handleSubmit);
